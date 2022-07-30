@@ -1,0 +1,135 @@
+html {
+  box-sizing: border-box;
+  color: var(--white);
+  font-size: 18px;
+  font-family: "Outfit", sans-serif;
+}
+
+*, *:before, *:after {box-sizing: inherit;}
+
+:root {
+  /* colors */
+  /*primary*/
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+
+  /* Neutral */
+  --dark-blue-main-bg: hsl(217, 54%, 11%);
+  --dark-blue-card-bg: hsl(216, 50%, 16%);
+  --dark-blue-line: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+}
+
+
+body {
+  margin: 0;
+  background-color: var(--dark-blue-main-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: var(--dark-blue-card-bg);
+  padding: 1rem;
+  margin: 1rem 1rem 5rem 1rem;
+  border-radius: 1.25rem;
+  box-shadow: 1rem 3rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.container .image-card .cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: hsl(178, 100%, 50%, 0.5);
+  width: 100%;
+  height: calc(100% - 5px);
+  z-index: 1;
+  opacity: 0;
+  border-radius: 1.25rem;
+  transition: opacity 300ms ease-in-out;
+}
+
+
+.container .image-card {position: relative;}
+
+.container .image-card .cover:hover {opacity: 1;}
+
+.container p {
+  color: var(--soft-blue);
+  font-weight: 300;
+}
+
+.creator {
+  display: flex;
+  margin-top: 1rem;
+  color: var(--soft-blue);
+}
+
+.creator img {
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.creator span {
+  color: var(--white);
+  font-weight: 600;
+}
+
+.data {
+  display: flex;
+  justify-content: space-between;
+}
+
+.data ul {
+  padding: 0;
+  color: var(--soft-blue);
+}
+
+.data img { padding-right: 0.3rem;}
+
+.eth,
+.time {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+}
+
+.eth li:nth-child(2) { color: var(--cyan);}
+
+img {max-width: 100%;}
+
+
+.image-card .cover img {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+.image-card > img {border-radius: 1.25rem;}
+
+.line {
+  height: 1px;
+  background-color: var(--dark-blue-line);
+}
+
+.creator span:hover,
+.image-card:hover,
+h2:hover {
+  color: var(--cyan);
+  cursor: pointer;
+}
+
+.time p {color: var(--soft-blue);}
+
+@media screen and (min-width: 500px) {
+  .container {width: 400px;}
+}
